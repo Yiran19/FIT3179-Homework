@@ -13,9 +13,10 @@
  "y": {
     "field": "Happiness Score", 
     "type": "quantitative"
-    },
+  },
   "tooltip": [
   {"field": "Country", "type": "nominal"},
+  {"field": "Economy (GDP per Capita)", "type": "quantitative"},
   {"field": "Happiness Score", "type": "quantitative"}
   ]
  }
