@@ -3,7 +3,7 @@
  "data": {"url": "https://raw.githubusercontent.com/Yiran19/Yiran19/main/2015.csv"},
  "width": 580,
  "height": 300,
- "mark": "area",
+ "mark": "line",
  "encoding": {
  "x": {
   "field": "Economy (GDP per Capita)",
@@ -13,6 +13,9 @@
  "y": {
     "field": "Happiness Score", 
     "type": "quantitative"
+  },
+  "color": {
+  "field":"Region"
   },
   "tooltip": [
   {"field": "Country", "type": "nominal"},
