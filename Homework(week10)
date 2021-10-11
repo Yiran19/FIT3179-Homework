@@ -1,1 +1,22 @@
+{
+ "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+ "data": {"url": "https://raw.githubusercontent.com/Yiran19/Yiran19/main/2015.csv"},
 
+ "width": 480,
+ "height": 240,
+ "mark": "line",
+ "encoding": {
+ "x": {
+  "field": "Economy (GDP per Capita)",
+  "type": "quantitative",
+  "axis": {"title": ""}
+ },
+ "y": {
+    "field": "Happiness Score", 
+    "type": "quantitative"},
+  "color": {
+    "field": "Region",
+    "legend": {"values": ["Western Europe", "Central and Eastern Europe", "Australia and New Zealand", "Eastern Asia","North America","Sub-Saharan Africa"]}
+  }
+ }
+ }
