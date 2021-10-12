@@ -1,8 +1,42 @@
 {
- "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": "world Happiness Report (2015)",
+  "vconcat": [{
+  "width": 800,
+  "height": 400,
+  "projection": {"type": "equirectangular"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/Yiran19/Yiran19/main/world_happiness_report.geo.json",
+    "format": {"type": "topojson", "feature": "world_happiness_report.geo"}
+  },
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/Yiran19/Yiran19/main/2015.csv"
+        },
+        "key": "Country",
+        "fields": ["Happiness Score"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape"},
+  "encoding": {
+    "color": {
+      "field": "Happiness Score",
+      "type": "quantitative",
+      "scale": {"type": "log"}
+    },
+    "tooltip": [
+      {"field": "properties.name", "type": "nominal", "title": "Country"},
+      {"field": "Happiness Score", "type": "quantitative"}
+    ]
+  }
+  },{
  "data": {"url": "https://raw.githubusercontent.com/Yiran19/Yiran19/main/2015.csv"},
- "width": 580,
- "height": 300,
+ "width": 800,
+ "height": 400,
  "mark": "line",
   "params": [{
     "name": "Region",
@@ -32,4 +66,5 @@
   {"field": "Happiness Score", "type": "quantitative"}
   ]
  }
- }
+  }]
+}
