@@ -4,6 +4,11 @@
  "width": 580,
  "height": 300,
  "mark": "line",
+  "params": [{
+    "name": "Region",
+    "select": {"type": "point", "fields": ["Region"]},
+    "bind": "legend"
+  }],
  "encoding": {
  "x": {
   "field": "Economy (GDP per Capita)",
@@ -16,6 +21,10 @@
   },
   "color": {
   "field":"Region"
+  },
+  "opacity": {
+  "condition": {"param": "Region", "value": 1},
+  "value": 0.2
   },
   "tooltip": [
   {"field": "Country", "type": "nominal"},
